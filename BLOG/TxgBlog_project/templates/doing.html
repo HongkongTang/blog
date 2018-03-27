@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content_left %}
+<div class="doing_moodlist">
+    <h2 class="title_tj">
+    <p id="doing_article_tag">&gt碎言碎语</p>
+    </h2>
+    <h1 class="doing_t_nav"><span>平凡，是为了最美的荡气回肠</span></h1>
+
+  <div class="doing_bloglist">
+    {% for article in article_list %}
+    <ul class="doing_arrow_box">
+         <div class="doing_sy">
+      <p> {{ article.content|safe }}</p>
+        </div>
+      <span class="doing_dateview">{{ article.date_publish | date:'Y-m-d' }}</span>
+    </ul>
+      {% endfor %}
+  <div id="pagination">
+        <ul id="pagination-flickr">
+            {% if article_list.has_previous %}
+                <li class="precious"><a href="?page={{ article_list.previous_page_number }}{% if request.GET.year %}&year={{ request.GET.year }}{% endif %}{% if request.GET.month %}&month={{ request.GET.month }}{% endif %}">&laquo;上一页</a></li>
+            {% else %}
+                <li class="previous-off">&laquo;上一页</li>
+            {% endif %}
+                <li class="active">{{ article_list.number }}/{{ article_list.paginator.num_pages }}</li>
+            {% if article_list.has_next %}
+                <li class="next"><a href="?page={{ article_list.next_page_number }}{% if request.GET.year %}&year={{ request.GET.year }}{% endif %}{% if request.GET.month %}&month={{ request.GET.month }}{% endif %}">下一页 &raquo;</a></li>
+            {% else %}
+                <li class="next-off">下一页 &raquo;</li>
+            {% endif %}
+        </ul>
+</div>
+  </div>
+</div>
+{% endblock %}

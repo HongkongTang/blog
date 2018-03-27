@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content_left %}
+  <h2 class="title_tj">
+    <p id="article_tag">&gt{{ article_list.tag.name}}</p>
+  </h2>
+  <div class="bloglist left">
+    <br/>  <br/>  <br/>
+    <div>
+        <h1><span>{{ article_list.title }}</span></h1>
+         <br/>
+        <p class="dateview"><span>{{ article_list.date_publish | date:'Y-m-d' }}</span><span>作者：Vision</span><span>阅读：{{ article_list.click_count }}</span></p>
+    </div>
+    <br/>
+    <div id="article_content_div">
+        <p id="article_content">{{ article_list.content | safe}}</p>
+    </div>
+    <p class="article_detial_p">欢迎到留言板，留下您的足迹....</p>
+  </div>
+{% endblock %}
+{% block content_right %}
+    {% include 'right.html' %}
+{% endblock %}

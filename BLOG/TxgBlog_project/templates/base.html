@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vision's&nbsp&nbspblog</title>
+<meta name="keywords" content="个人博客,vision,blog,ACM,代码，模板，HDU,descipe" />
+<meta name="description" content="vision bloh" />
+<link href="/static/css/base.css" rel="stylesheet">
+<link href="/static/css/index.css" rel="stylesheet">
+<link href="/static/css/about.css" rel="stylesheet">
+<link href="/static/css/mood.css" rel="stylesheet">
+<script src="/static/js/silder.js"></script>
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+  <div id="logo"><a href="/"><h1>Vision<span>'s</span>&nbsp Blog</h1></a></div>
+  <nav class="topnav" id="topnav"><a href="{% url 'index' %}"><span>首页</span><span class="en">Protal</span></a>
+  <a href="{% url 'about' %}"><span>关于我</span><span class="en">About</span></a>
+  <a href="{% url 'book' %}"><span>百草屋</span><span class="en">Book</span></a>
+  <a href="{% url 'doing' %}"><span>碎言碎语</span><span class="en">Doing</span></a>
+  <a href="{% url 'ACM' %}"><span>算法模板</span><span class="en">ACM</span></a>
+  <a href="{% url 'coding' %}"><span>代码控</span><span class="en">coding</span></a>
+  <a href="{% url 'contact' %}"><span>留言版</span><span class="en">Gustbook</span></a></nav>
+</header>
+{% block top %}
+{% endblock %}
+<article>
+    {% block content_left %}
+
+    {% endblock %}
+
+    {% block content_right %}
+    {% endblock %}
+</article>
+<footer>
+  <p>Vision's blog&nbsp&nbsp<a href="http://www.miitbeian.gov.cn/" target="_blank">蜀ICP备11002373号-1</a> <a href="/">index</a></p>
+</footer>
+
+</body>
+</html>

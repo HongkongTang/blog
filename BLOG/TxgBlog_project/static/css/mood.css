@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+.doing_moodlist { margin: auto; width: 100%; overflow: hidden }
+/* --------------------博客列表-------------------- */
+.doing_t_nav span{ float:right; color:#999}
+.doing_t_nav { border-bottom: #F1F1F1 1px solid; font-size: 12px; font-weight: normal; line-height: 40px; height: 40px;margin:20px auto;width:1000px }
+
+.doing_n1 { background: #5EA51B; }
+.doing_n2 { background: #8BBF5D; }
+.doing_bloglist { width: 1000px; margin: 0 auto; background: url(../images/r_title_bg.jpg) repeat-y 764px 0;overflow: hidden; }
+.doing_arrow_box { background: #f8f8f8; box-shadow: 0px 1px 0px rgba(255,255,255,.1), inset 0px 1px 1px rgba(214, 214, 214, 0.7); width: 730px; border-radius: 6px; position: relative; padding: 20px 0; margin: 20px 0; }
+.doing_arrow_box img { width: 150px; float: left; margin: 0 20px 0 20px; }
+.doing_arrow_box p { line-height: 24px; padding: 0 20px 20px }
+.doing_arrow_box::before { content: ""; width: 0px; height: 0px; border-style: solid; border-width: 0px 0 20px 22px; border-color: transparent transparent transparent #fff; position: absolute; left: 730px; top: 23px; }/* 三角形 */
+.doing_arrow_box::after { content: ""; width: 10px; height: 10px; border-radius: 50%; position: absolute; left: 758px; top: 16px; background: #CCCCCE; border: 2px solid #fff; transition: all 0.5s; }/* 圆形 */
+.doing_arrow_box:hover::before { border-color: transparent transparent transparent #CECCCD }/* 三角形 */
+.doing_arrow_box:hover::after { border: #fff 2px solid; background: #5EA51B }/* 圆形 */
+.doing_arrow_box:hover { background: #f4f2f2; color: #333; text-shadow: #f7f7f7 1px 1px 1px }
+.doing_dateview { position: absolute; left: 788px; top: 20px; width: 125px; line-height: 30px; background: #5EA51B; border-radius: 0px 40px; text-align: center; color: #fff }
+
+.doing_sy{ overflow:hidden}
+
+
+#div_04{float:left;margin-right: 120px}
+#div_02{margin-bottom: 40px;margin-top: 20px}
+#div_05{margin-top: 30px;border-bottom: #660066 1px solid;padding-bottom: 10px}
+.span_{margin-right: 10px;font-size: 18px}
+.f2{height: 40px;width: 200px;border: #660066 1px solid}
+.f3{height: 40px;width: 200px;border: #660066 1px solid}
+#doing_user{}

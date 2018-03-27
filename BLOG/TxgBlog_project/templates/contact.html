@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content_left %}
+<div class="doing_moodlist">
+    <h2 class="title_tj">
+    <p id="doing_article_tag">&gt留言板</p>
+    </h2>
+    <h1 class="doing_t_nav"><span>平凡，是为了最美的荡气回肠</span></h1>
+
+  <div class="doing_bloglist">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+         <div id = "div_04">
+            <div id="div_02"><span class="span_">昵称:</span>{{ form.subject }}</div>
+            <div id="div_03"><span class="span_">邮箱:</span>{{ form.sender }}</div>
+        </div>
+        <div id="div_01">{{ form.message }}</div>
+        <div id="div_05">
+            <input type="submit" value="我要留言...">
+        </div>
+
+    </form>
+    {% for review in review_list %}
+    <ul class="doing_arrow_box">
+         <div class="doing_sy">
+             <p id="doing_user">用户名：{{ review.user }}&nbsp&nbsp&nbsp邮箱：{{ review.email }}</p>
+             <p> &nbsp&nbsp&nbsp{{ review.content|safe }}</p>
+        </div>
+      <span class="doing_dateview">{{ review.date_publish | date:'Y-m-d' }}</span>
+    </ul>
+      {% endfor %}
+  <div id="pagination">
+        <ul id="pagination-flickr">
+            {% if review_list.has_previous %}
+                <li class="precious"><a href="?page={{ review_list.previous_page_number }}{% if request.GET.year %}&year={{ request.GET.year }}{% endif %}{% if request.GET.month %}&month={{ request.GET.month }}{% endif %}">&laquo;上一页</a></li>
+            {% else %}
+                <li class="previous-off">&laquo;上一页</li>
+            {% endif %}
+                <li class="active">{{ review_list.number }}/{{ review_list.paginator.num_pages }}</li>
+            {% if review_list.has_next %}
+                <li class="next"><a href="?page={{ review_list.next_page_number }}{% if request.GET.year %}&year={{ request.GET.year }}{% endif %}{% if request.GET.month %}&month={{ request.GET.month }}{% endif %}">下一页 &raquo;</a></li>
+            {% else %}
+                <li class="next-off">下一页 &raquo;</li>
+            {% endif %}
+        </ul>
+</div>
+  </div>
+</div>
+{% endblock %}
